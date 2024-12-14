@@ -6,6 +6,17 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		EFB24F942D0DBF590003B077 /* MultipeerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24F912D0DBF590003B077 /* MultipeerUITests.swift */; };
+		EFB24F952D0DBF590003B077 /* MultipeerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24F922D0DBF590003B077 /* MultipeerUITestsLaunchTests.swift */; };
+		EFB24F982D0DBF590003B077 /* MultipeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24F962D0DBF590003B077 /* MultipeerTests.swift */; };
+		EFB24F9F2D0DBF590003B077 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24F9C2D0DBF590003B077 /* ContentView.swift */; };
+		EFB24FA02D0DBF590003B077 /* MultipeerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24F9D2D0DBF590003B077 /* MultipeerApp.swift */; };
+		EFB24FA12D0DBF590003B077 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFB24F992D0DBF590003B077 /* Preview Assets.xcassets */; };
+		EFB24FA22D0DBF590003B077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFB24F9B2D0DBF590003B077 /* Assets.xcassets */; };
+		EFB24FA52D0DC02C0003B077 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24FA42D0DC02A0003B077 /* MultipeerManager.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		EFB24F752D0DBF530003B077 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,25 +38,15 @@
 		EFB24F642D0DBF520003B077 /* Multipeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multipeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB24F742D0DBF530003B077 /* MultipeerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipeerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB24F7E2D0DBF530003B077 /* MultipeerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipeerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFB24F912D0DBF590003B077 /* MultipeerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerUITests.swift; sourceTree = "<group>"; };
+		EFB24F922D0DBF590003B077 /* MultipeerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EFB24F962D0DBF590003B077 /* MultipeerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerTests.swift; sourceTree = "<group>"; };
+		EFB24F992D0DBF590003B077 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EFB24F9B2D0DBF590003B077 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EFB24F9C2D0DBF590003B077 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EFB24F9D2D0DBF590003B077 /* MultipeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerApp.swift; sourceTree = "<group>"; };
+		EFB24FA42D0DC02A0003B077 /* MultipeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		EFB24F662D0DBF520003B077 /* Multipeer */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Multipeer;
-			sourceTree = "<group>";
-		};
-		EFB24F772D0DBF530003B077 /* MultipeerTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MultipeerTests;
-			sourceTree = "<group>";
-		};
-		EFB24F812D0DBF530003B077 /* MultipeerUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = MultipeerUITests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EFB24F612D0DBF520003B077 /* Frameworks */ = {
@@ -75,9 +76,9 @@
 		EFB24F5B2D0DBF520003B077 = {
 			isa = PBXGroup;
 			children = (
-				EFB24F662D0DBF520003B077 /* Multipeer */,
-				EFB24F772D0DBF530003B077 /* MultipeerTests */,
-				EFB24F812D0DBF530003B077 /* MultipeerUITests */,
+				EFB24F9E2D0DBF590003B077 /* Multipeer */,
+				EFB24F972D0DBF590003B077 /* MultipeerTests */,
+				EFB24F932D0DBF590003B077 /* MultipeerUITests */,
 				EFB24F652D0DBF520003B077 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +91,51 @@
 				EFB24F7E2D0DBF530003B077 /* MultipeerUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EFB24F932D0DBF590003B077 /* MultipeerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EFB24F912D0DBF590003B077 /* MultipeerUITests.swift */,
+				EFB24F922D0DBF590003B077 /* MultipeerUITestsLaunchTests.swift */,
+			);
+			path = MultipeerUITests;
+			sourceTree = "<group>";
+		};
+		EFB24F972D0DBF590003B077 /* MultipeerTests */ = {
+			isa = PBXGroup;
+			children = (
+				EFB24F962D0DBF590003B077 /* MultipeerTests.swift */,
+			);
+			path = MultipeerTests;
+			sourceTree = "<group>";
+		};
+		EFB24F9A2D0DBF590003B077 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EFB24F992D0DBF590003B077 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EFB24F9E2D0DBF590003B077 /* Multipeer */ = {
+			isa = PBXGroup;
+			children = (
+				EFB24FA32D0DC0230003B077 /* Infrastructure */,
+				EFB24F9A2D0DBF590003B077 /* Preview Content */,
+				EFB24F9B2D0DBF590003B077 /* Assets.xcassets */,
+				EFB24F9C2D0DBF590003B077 /* ContentView.swift */,
+				EFB24F9D2D0DBF590003B077 /* MultipeerApp.swift */,
+			);
+			path = Multipeer;
+			sourceTree = "<group>";
+		};
+		EFB24FA32D0DC0230003B077 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				EFB24FA42D0DC02A0003B077 /* MultipeerManager.swift */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,9 +152,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				EFB24F662D0DBF520003B077 /* Multipeer */,
 			);
 			name = Multipeer;
 			packageProductDependencies = (
@@ -130,9 +173,6 @@
 			dependencies = (
 				EFB24F762D0DBF530003B077 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				EFB24F772D0DBF530003B077 /* MultipeerTests */,
-			);
 			name = MultipeerTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +192,6 @@
 			);
 			dependencies = (
 				EFB24F802D0DBF530003B077 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				EFB24F812D0DBF530003B077 /* MultipeerUITests */,
 			);
 			name = MultipeerUITests;
 			packageProductDependencies = (
@@ -212,6 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB24FA12D0DBF590003B077 /* Preview Assets.xcassets in Resources */,
+				EFB24FA22D0DBF590003B077 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +275,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB24F9F2D0DBF590003B077 /* ContentView.swift in Sources */,
+				EFB24FA52D0DC02C0003B077 /* MultipeerManager.swift in Sources */,
+				EFB24FA02D0DBF590003B077 /* MultipeerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB24F982D0DBF590003B077 /* MultipeerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +293,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFB24F942D0DBF590003B077 /* MultipeerUITests.swift in Sources */,
+				EFB24F952D0DBF590003B077 /* MultipeerUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +444,7 @@
 				DEVELOPMENT_TEAM = DP3K3GBL6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Nearby Devices";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,6 +474,7 @@
 				DEVELOPMENT_TEAM = DP3K3GBL6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Nearby Devices";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
