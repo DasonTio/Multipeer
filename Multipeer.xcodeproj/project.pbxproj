@@ -15,6 +15,13 @@
 		EFB24FA12D0DBF590003B077 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFB24F992D0DBF590003B077 /* Preview Assets.xcassets */; };
 		EFB24FA22D0DBF590003B077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFB24F9B2D0DBF590003B077 /* Assets.xcassets */; };
 		EFB24FA52D0DC02C0003B077 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24FA42D0DC02A0003B077 /* MultipeerManager.swift */; };
+		EFC679FA2D0F0EFD00481B96 /* PermissionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC679F92D0F0EFB00481B96 /* PermissionRequest.swift */; };
+		EFC679FC2D0F128000481B96 /* MultipeerManager+MCNearbyServiceAdvertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC679FB2D0F126E00481B96 /* MultipeerManager+MCNearbyServiceAdvertiser.swift */; };
+		EFC679FE2D0F151200481B96 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC679FD2D0F151000481B96 /* MessageView.swift */; };
+		EFC67A002D0F1D6D00481B96 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC679FF2D0F1D6600481B96 /* MessageResponse.swift */; };
+		EFD2ADD12D0EFBAA0027A2A4 /* MultipeerManager+MCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2ADD02D0EFB9C0027A2A4 /* MultipeerManager+MCSession.swift */; };
+		EFD2ADD42D0F06FC0027A2A4 /* MultipeerManager+MCNearbyServiceBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2ADD32D0F06ED0027A2A4 /* MultipeerManager+MCNearbyServiceBrowser.swift */; };
+		EFD2ADD72D0F08890027A2A4 /* PeerDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2ADD62D0F08860027A2A4 /* PeerDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +53,13 @@
 		EFB24F9C2D0DBF590003B077 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EFB24F9D2D0DBF590003B077 /* MultipeerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerApp.swift; sourceTree = "<group>"; };
 		EFB24FA42D0DC02A0003B077 /* MultipeerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerManager.swift; sourceTree = "<group>"; };
+		EFC679F92D0F0EFB00481B96 /* PermissionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionRequest.swift; sourceTree = "<group>"; };
+		EFC679FB2D0F126E00481B96 /* MultipeerManager+MCNearbyServiceAdvertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipeerManager+MCNearbyServiceAdvertiser.swift"; sourceTree = "<group>"; };
+		EFC679FD2D0F151000481B96 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		EFC679FF2D0F1D6600481B96 /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
+		EFD2ADD02D0EFB9C0027A2A4 /* MultipeerManager+MCSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipeerManager+MCSession.swift"; sourceTree = "<group>"; };
+		EFD2ADD32D0F06ED0027A2A4 /* MultipeerManager+MCNearbyServiceBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipeerManager+MCNearbyServiceBrowser.swift"; sourceTree = "<group>"; };
+		EFD2ADD62D0F08860027A2A4 /* PeerDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,9 +135,11 @@
 		EFB24F9E2D0DBF590003B077 /* Multipeer */ = {
 			isa = PBXGroup;
 			children = (
+				EFD2ADD52D0F08780027A2A4 /* Model */,
 				EFB24FA32D0DC0230003B077 /* Infrastructure */,
 				EFB24F9A2D0DBF590003B077 /* Preview Content */,
 				EFB24F9B2D0DBF590003B077 /* Assets.xcassets */,
+				EFC679FD2D0F151000481B96 /* MessageView.swift */,
 				EFB24F9C2D0DBF590003B077 /* ContentView.swift */,
 				EFB24F9D2D0DBF590003B077 /* MultipeerApp.swift */,
 			);
@@ -133,9 +149,22 @@
 		EFB24FA32D0DC0230003B077 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				EFC679FB2D0F126E00481B96 /* MultipeerManager+MCNearbyServiceAdvertiser.swift */,
+				EFD2ADD32D0F06ED0027A2A4 /* MultipeerManager+MCNearbyServiceBrowser.swift */,
+				EFD2ADD02D0EFB9C0027A2A4 /* MultipeerManager+MCSession.swift */,
 				EFB24FA42D0DC02A0003B077 /* MultipeerManager.swift */,
 			);
 			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		EFD2ADD52D0F08780027A2A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EFC679FF2D0F1D6600481B96 /* MessageResponse.swift */,
+				EFC679F92D0F0EFB00481B96 /* PermissionRequest.swift */,
+				EFD2ADD62D0F08860027A2A4 /* PeerDevice.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,9 +304,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC67A002D0F1D6D00481B96 /* MessageResponse.swift in Sources */,
+				EFD2ADD42D0F06FC0027A2A4 /* MultipeerManager+MCNearbyServiceBrowser.swift in Sources */,
+				EFD2ADD12D0EFBAA0027A2A4 /* MultipeerManager+MCSession.swift in Sources */,
 				EFB24F9F2D0DBF590003B077 /* ContentView.swift in Sources */,
+				EFC679FE2D0F151200481B96 /* MessageView.swift in Sources */,
+				EFC679FC2D0F128000481B96 /* MultipeerManager+MCNearbyServiceAdvertiser.swift in Sources */,
 				EFB24FA52D0DC02C0003B077 /* MultipeerManager.swift in Sources */,
 				EFB24FA02D0DBF590003B077 /* MultipeerApp.swift in Sources */,
+				EFD2ADD72D0F08890027A2A4 /* PeerDevice.swift in Sources */,
+				EFC679FA2D0F0EFD00481B96 /* PermissionRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +480,7 @@
 				DEVELOPMENT_TEAM = DP3K3GBL6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Nearby Devices";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "LAN discovery needed to search other devices. Please allow the permission.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -474,7 +510,7 @@
 				DEVELOPMENT_TEAM = DP3K3GBL6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "Nearby Devices";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "LAN discovery needed to search other devices. Please allow the permission.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
