@@ -19,6 +19,13 @@
 		EFC679FC2D0F128000481B96 /* MultipeerManager+MCNearbyServiceAdvertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC679FB2D0F126E00481B96 /* MultipeerManager+MCNearbyServiceAdvertiser.swift */; };
 		EFC679FE2D0F151200481B96 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC679FD2D0F151000481B96 /* MessageView.swift */; };
 		EFC67A002D0F1D6D00481B96 /* MessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC679FF2D0F1D6600481B96 /* MessageResponse.swift */; };
+		EFCD5E992D1065ED00720149 /* BlockListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD5E982D1065EA00720149 /* BlockListManager.swift */; };
+		EFCD5EA22D10742F00720149 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCD5EA12D10742F00720149 /* NetworkExtension.framework */; };
+		EFCD5EAA2D10742F00720149 /* ContentFilter.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EFCD5E9F2D10742F00720149 /* ContentFilter.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EFCD5EB42D10743E00720149 /* FilterControlProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD5EB12D10743E00720149 /* FilterControlProvider.swift */; };
+		EFCD5EB72D1074B600720149 /* FilterDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD5EB62D1074B300720149 /* FilterDomain.swift */; };
+		EFCD5EB82D107BDD00720149 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCD5EA12D10742F00720149 /* NetworkExtension.framework */; };
+		EFCD5EBB2D107EC000720149 /* FilterUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD5EBA2D107EB900720149 /* FilterUtilities.swift */; };
 		EFD2ADD12D0EFBAA0027A2A4 /* MultipeerManager+MCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2ADD02D0EFB9C0027A2A4 /* MultipeerManager+MCSession.swift */; };
 		EFD2ADD42D0F06FC0027A2A4 /* MultipeerManager+MCNearbyServiceBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2ADD32D0F06ED0027A2A4 /* MultipeerManager+MCNearbyServiceBrowser.swift */; };
 		EFD2ADD72D0F08890027A2A4 /* PeerDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2ADD62D0F08860027A2A4 /* PeerDevice.swift */; };
@@ -39,7 +46,28 @@
 			remoteGlobalIDString = EFB24F632D0DBF520003B077;
 			remoteInfo = Multipeer;
 		};
+		EFCD5EA82D10742F00720149 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFB24F5C2D0DBF520003B077 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EFCD5E9E2D10742F00720149;
+			remoteInfo = ContentFilter;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EFCD5EAF2D10742F00720149 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EFCD5EAA2D10742F00720149 /* ContentFilter.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		EFB24F642D0DBF520003B077 /* Multipeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multipeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +85,16 @@
 		EFC679FB2D0F126E00481B96 /* MultipeerManager+MCNearbyServiceAdvertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipeerManager+MCNearbyServiceAdvertiser.swift"; sourceTree = "<group>"; };
 		EFC679FD2D0F151000481B96 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		EFC679FF2D0F1D6600481B96 /* MessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageResponse.swift; sourceTree = "<group>"; };
+		EFCD5E972D10651900720149 /* Multipeer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Multipeer.entitlements; sourceTree = "<group>"; };
+		EFCD5E982D1065EA00720149 /* BlockListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockListManager.swift; sourceTree = "<group>"; };
+		EFCD5E9A2D10699100720149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		EFCD5E9F2D10742F00720149 /* ContentFilter.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentFilter.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFCD5EA12D10742F00720149 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		EFCD5EB02D10743E00720149 /* ContentFilter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentFilter.entitlements; sourceTree = "<group>"; };
+		EFCD5EB12D10743E00720149 /* FilterControlProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterControlProvider.swift; sourceTree = "<group>"; };
+		EFCD5EB22D10743E00720149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFCD5EB62D1074B300720149 /* FilterDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDomain.swift; sourceTree = "<group>"; };
+		EFCD5EBA2D107EB900720149 /* FilterUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterUtilities.swift; sourceTree = "<group>"; };
 		EFD2ADD02D0EFB9C0027A2A4 /* MultipeerManager+MCSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipeerManager+MCSession.swift"; sourceTree = "<group>"; };
 		EFD2ADD32D0F06ED0027A2A4 /* MultipeerManager+MCNearbyServiceBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipeerManager+MCNearbyServiceBrowser.swift"; sourceTree = "<group>"; };
 		EFD2ADD62D0F08860027A2A4 /* PeerDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerDevice.swift; sourceTree = "<group>"; };
@@ -67,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFCD5EB82D107BDD00720149 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +123,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EFCD5E9C2D10742F00720149 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFCD5EA22D10742F00720149 /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -93,6 +140,8 @@
 				EFB24F9E2D0DBF590003B077 /* Multipeer */,
 				EFB24F972D0DBF590003B077 /* MultipeerTests */,
 				EFB24F932D0DBF590003B077 /* MultipeerUITests */,
+				EFCD5EB32D10743E00720149 /* ContentFilter */,
+				EFCD5EA02D10742F00720149 /* Frameworks */,
 				EFB24F652D0DBF520003B077 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +152,7 @@
 				EFB24F642D0DBF520003B077 /* Multipeer.app */,
 				EFB24F742D0DBF530003B077 /* MultipeerTests.xctest */,
 				EFB24F7E2D0DBF530003B077 /* MultipeerUITests.xctest */,
+				EFCD5E9F2D10742F00720149 /* ContentFilter.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,7 +185,10 @@
 		EFB24F9E2D0DBF590003B077 /* Multipeer */ = {
 			isa = PBXGroup;
 			children = (
+				EFCD5E9A2D10699100720149 /* Info.plist */,
+				EFCD5E972D10651900720149 /* Multipeer.entitlements */,
 				EFD2ADD52D0F08780027A2A4 /* Model */,
+				EFCD5EB92D107EB200720149 /* Extension */,
 				EFB24FA32D0DC0230003B077 /* Infrastructure */,
 				EFB24F9A2D0DBF590003B077 /* Preview Content */,
 				EFB24F9B2D0DBF590003B077 /* Assets.xcassets */,
@@ -149,6 +202,7 @@
 		EFB24FA32D0DC0230003B077 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				EFCD5E982D1065EA00720149 /* BlockListManager.swift */,
 				EFC679FB2D0F126E00481B96 /* MultipeerManager+MCNearbyServiceAdvertiser.swift */,
 				EFD2ADD32D0F06ED0027A2A4 /* MultipeerManager+MCNearbyServiceBrowser.swift */,
 				EFD2ADD02D0EFB9C0027A2A4 /* MultipeerManager+MCSession.swift */,
@@ -157,9 +211,36 @@
 			path = Infrastructure;
 			sourceTree = "<group>";
 		};
+		EFCD5EA02D10742F00720149 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFCD5EA12D10742F00720149 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFCD5EB32D10743E00720149 /* ContentFilter */ = {
+			isa = PBXGroup;
+			children = (
+				EFCD5EB02D10743E00720149 /* ContentFilter.entitlements */,
+				EFCD5EB12D10743E00720149 /* FilterControlProvider.swift */,
+				EFCD5EB22D10743E00720149 /* Info.plist */,
+			);
+			path = ContentFilter;
+			sourceTree = "<group>";
+		};
+		EFCD5EB92D107EB200720149 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EFCD5EBA2D107EB900720149 /* FilterUtilities.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		EFD2ADD52D0F08780027A2A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EFCD5EB62D1074B300720149 /* FilterDomain.swift */,
 				EFC679FF2D0F1D6600481B96 /* MessageResponse.swift */,
 				EFC679F92D0F0EFB00481B96 /* PermissionRequest.swift */,
 				EFD2ADD62D0F08860027A2A4 /* PeerDevice.swift */,
@@ -177,10 +258,12 @@
 				EFB24F602D0DBF520003B077 /* Sources */,
 				EFB24F612D0DBF520003B077 /* Frameworks */,
 				EFB24F622D0DBF520003B077 /* Resources */,
+				EFCD5EAF2D10742F00720149 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EFCD5EA92D10742F00720149 /* PBXTargetDependency */,
 			);
 			name = Multipeer;
 			packageProductDependencies = (
@@ -229,6 +312,25 @@
 			productReference = EFB24F7E2D0DBF530003B077 /* MultipeerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		EFCD5E9E2D10742F00720149 /* ContentFilter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFCD5EAC2D10742F00720149 /* Build configuration list for PBXNativeTarget "ContentFilter" */;
+			buildPhases = (
+				EFCD5E9B2D10742F00720149 /* Sources */,
+				EFCD5E9C2D10742F00720149 /* Frameworks */,
+				EFCD5E9D2D10742F00720149 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ContentFilter;
+			packageProductDependencies = (
+			);
+			productName = ContentFilter;
+			productReference = EFCD5E9F2D10742F00720149 /* ContentFilter.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -250,6 +352,9 @@
 						CreatedOnToolsVersion = 16.1;
 						TestTargetID = EFB24F632D0DBF520003B077;
 					};
+					EFCD5E9E2D10742F00720149 = {
+						CreatedOnToolsVersion = 16.1;
+					};
 				};
 			};
 			buildConfigurationList = EFB24F5F2D0DBF520003B077 /* Build configuration list for PBXProject "Multipeer" */;
@@ -269,6 +374,7 @@
 				EFB24F632D0DBF520003B077 /* Multipeer */,
 				EFB24F732D0DBF530003B077 /* MultipeerTests */,
 				EFB24F7D2D0DBF530003B077 /* MultipeerUITests */,
+				EFCD5E9E2D10742F00720149 /* ContentFilter */,
 			);
 		};
 /* End PBXProject section */
@@ -297,6 +403,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EFCD5E9D2D10742F00720149 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -314,6 +427,9 @@
 				EFB24FA02D0DBF590003B077 /* MultipeerApp.swift in Sources */,
 				EFD2ADD72D0F08890027A2A4 /* PeerDevice.swift in Sources */,
 				EFC679FA2D0F0EFD00481B96 /* PermissionRequest.swift in Sources */,
+				EFCD5EBB2D107EC000720149 /* FilterUtilities.swift in Sources */,
+				EFCD5EB72D1074B600720149 /* FilterDomain.swift in Sources */,
+				EFCD5E992D1065ED00720149 /* BlockListManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +450,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EFCD5E9B2D10742F00720149 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFCD5EB42D10743E00720149 /* FilterControlProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -346,6 +470,11 @@
 			isa = PBXTargetDependency;
 			target = EFB24F632D0DBF520003B077 /* Multipeer */;
 			targetProxy = EFB24F7F2D0DBF530003B077 /* PBXContainerItemProxy */;
+		};
+		EFCD5EA92D10742F00720149 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EFCD5E9E2D10742F00720149 /* ContentFilter */;
+			targetProxy = EFCD5EA82D10742F00720149 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -474,12 +603,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Multipeer/Multipeer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Multipeer/Preview Content\"";
 				DEVELOPMENT_TEAM = DP3K3GBL6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Multipeer/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "LAN discovery needed to search other devices. Please allow the permission.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -504,12 +635,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Multipeer/Multipeer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Multipeer/Preview Content\"";
 				DEVELOPMENT_TEAM = DP3K3GBL6K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Multipeer/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "LAN discovery needed to search other devices. Please allow the permission.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -601,6 +734,58 @@
 			};
 			name = Release;
 		};
+		EFCD5EAD2D10742F00720149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ContentFilter/ContentFilter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DP3K3GBL6K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ContentFilter/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ContentFilter;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dasontio.Multipeer.ContentFilter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EFCD5EAE2D10742F00720149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ContentFilter/ContentFilter.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DP3K3GBL6K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ContentFilter/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ContentFilter;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dasontio.Multipeer.ContentFilter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -636,6 +821,15 @@
 			buildConfigurations = (
 				EFB24F8F2D0DBF530003B077 /* Debug */,
 				EFB24F902D0DBF530003B077 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFCD5EAC2D10742F00720149 /* Build configuration list for PBXNativeTarget "ContentFilter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFCD5EAD2D10742F00720149 /* Debug */,
+				EFCD5EAE2D10742F00720149 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

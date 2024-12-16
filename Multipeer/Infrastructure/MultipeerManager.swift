@@ -65,6 +65,7 @@ final class MultipeerManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowse
     }
     
     public func startBrowse(){
+        peers = []
         browser.startBrowsingForPeers()
     }
     
@@ -72,6 +73,7 @@ final class MultipeerManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowse
         browser.stopBrowsingForPeers()
     }
     
+    // MARK: Add connection for other device
     public func show(peerId: MCPeerID) {
         guard let first = peers.first(where: { $0.peerID == peerId }) else {
             return
@@ -85,16 +87,24 @@ final class MultipeerManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowse
             return
         }
         
-        try? session.send(data, toPeers: [joinedPeer.last!.peerID], with: .reliable)
-
-        messagePublisher.send(MessageResponse(
-            peerID: peerID,
-            message: string)
-        )
+        let connectedPeers = session.connectedPeers
+        if connectedPeers.isEmpty {
+            print("No peers connected.")
+            return
+        }
+        
+        do {
+            try session.send(data, toPeers: connectedPeers, with: .reliable)
+            
+            messagePublisher.send(MessageResponse(peerID: peerID, message: string))
+        } catch {
+            print("Error sending message: \(error.localizedDescription)")
+        }
     }
 }
 
 private extension MultipeerManager{
+    // MARK: Add connection for our device
     func connect() {
         guard let selectedPeer else {
             return

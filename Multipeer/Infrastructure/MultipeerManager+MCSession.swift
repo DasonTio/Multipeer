@@ -13,14 +13,13 @@ extension MultipeerManager {
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        guard let last = joinedPeer.last, last.peerID == peerID, let message = String(data: data, encoding: .utf8) else {
-            return
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            if let message = String(data: data, encoding: .utf8) {
+                let messageResponse = MessageResponse(peerID: peerID, message: message)
+                self.messagePublisher.send(messageResponse)
+            }
         }
-        
-        messagePublisher.send(MessageResponse(
-            peerID: peerID,
-            message: message
-        ))
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
