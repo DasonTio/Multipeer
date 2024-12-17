@@ -10,6 +10,7 @@
 		EF0AD2952D11CFF000213246 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCD5EA12D10742F00720149 /* NetworkExtension.framework */; };
 		EF0AD29D2D11CFF000213246 /* ContentFilterData.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EF0AD2942D11CFEF00213246 /* ContentFilterData.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EF0AD2A72D11D00900213246 /* FilterDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0AD2A42D11D00900213246 /* FilterDataProvider.swift */; };
+		EF3F17C32D11D5EC005CB98B /* FilterUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3F17C22D11D5EA005CB98B /* FilterUtilities.swift */; };
 		EFB24F942D0DBF590003B077 /* MultipeerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24F912D0DBF590003B077 /* MultipeerUITests.swift */; };
 		EFB24F952D0DBF590003B077 /* MultipeerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24F922D0DBF590003B077 /* MultipeerUITestsLaunchTests.swift */; };
 		EFB24F982D0DBF590003B077 /* MultipeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24F962D0DBF590003B077 /* MultipeerTests.swift */; };
@@ -18,6 +19,8 @@
 		EFB24FA12D0DBF590003B077 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFB24F992D0DBF590003B077 /* Preview Assets.xcassets */; };
 		EFB24FA22D0DBF590003B077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFB24F9B2D0DBF590003B077 /* Assets.xcassets */; };
 		EFB24FA52D0DC02C0003B077 /* MultipeerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24FA42D0DC02A0003B077 /* MultipeerManager.swift */; };
+		EFC36BEB2D11E4E4003A87BC /* FilterUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3F17C22D11D5EA005CB98B /* FilterUtilities.swift */; };
+		EFC36BEC2D11E4E4003A87BC /* FilterUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3F17C22D11D5EA005CB98B /* FilterUtilities.swift */; };
 		EFC679FA2D0F0EFD00481B96 /* PermissionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC679F92D0F0EFB00481B96 /* PermissionRequest.swift */; };
 		EFC679FC2D0F128000481B96 /* MultipeerManager+MCNearbyServiceAdvertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC679FB2D0F126E00481B96 /* MultipeerManager+MCNearbyServiceAdvertiser.swift */; };
 		EFC679FE2D0F151200481B96 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC679FD2D0F151000481B96 /* MessageView.swift */; };
@@ -84,6 +87,7 @@
 		EF0AD2A32D11D00900213246 /* ContentFilterData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentFilterData.entitlements; sourceTree = "<group>"; };
 		EF0AD2A42D11D00900213246 /* FilterDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDataProvider.swift; sourceTree = "<group>"; };
 		EF0AD2A52D11D00900213246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF3F17C22D11D5EA005CB98B /* FilterUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterUtilities.swift; sourceTree = "<group>"; };
 		EFB24F642D0DBF520003B077 /* Multipeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multipeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB24F742D0DBF530003B077 /* MultipeerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipeerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB24F7E2D0DBF530003B077 /* MultipeerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipeerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +169,14 @@
 			path = ContentFilterData;
 			sourceTree = "<group>";
 		};
+		EF3F17C12D11D5E2005CB98B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EF3F17C22D11D5EA005CB98B /* FilterUtilities.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		EFB24F5B2D0DBF520003B077 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +232,7 @@
 			children = (
 				EFCD5E9A2D10699100720149 /* Info.plist */,
 				EFCD5E972D10651900720149 /* Multipeer.entitlements */,
+				EF3F17C12D11D5E2005CB98B /* Helpers */,
 				EFD2ADD52D0F08780027A2A4 /* Model */,
 				EFB24FA32D0DC0230003B077 /* Infrastructure */,
 				EFB24F9A2D0DBF590003B077 /* Preview Content */,
@@ -472,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC36BEC2D11E4E4003A87BC /* FilterUtilities.swift in Sources */,
 				EF0AD2A72D11D00900213246 /* FilterDataProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +498,7 @@
 				EFD2ADD42D0F06FC0027A2A4 /* MultipeerManager+MCNearbyServiceBrowser.swift in Sources */,
 				EFD2ADD12D0EFBAA0027A2A4 /* MultipeerManager+MCSession.swift in Sources */,
 				EFB24F9F2D0DBF590003B077 /* ContentView.swift in Sources */,
+				EF3F17C32D11D5EC005CB98B /* FilterUtilities.swift in Sources */,
 				EFC679FE2D0F151200481B96 /* MessageView.swift in Sources */,
 				EFC679FC2D0F128000481B96 /* MultipeerManager+MCNearbyServiceAdvertiser.swift in Sources */,
 				EFB24FA52D0DC02C0003B077 /* MultipeerManager.swift in Sources */,
@@ -516,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC36BEB2D11E4E4003A87BC /* FilterUtilities.swift in Sources */,
 				EFCD5EB42D10743E00720149 /* FilterControlProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,11 +747,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Multipeer/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "LAN discovery needed to search other devices. Please allow the permission.";
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = "We need it to block some content";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -763,11 +782,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Multipeer/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "LAN discovery needed to search other devices. Please allow the permission.";
+				INFOPLIST_KEY_NSSystemExtensionUsageDescription = "We need it to block some content";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = armv7;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

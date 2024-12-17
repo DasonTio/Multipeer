@@ -74,41 +74,41 @@ struct ContentView: View {
             )
             .toolbar {
                 ToolbarItem(placement: .bottomBar) {
-                    Button(action: {
-                        mpManager.selectedPeer = PeerDevice(peerID: mpManager.peerID)
-                        isNavigateToMessageView = true
-                    }) {
-                        Image(systemName: "message")
-                            .foregroundStyle(.black)
-                            .padding()
-                            .background(
-                                Circle().fill(Color(UIColor.systemGray5))
-                            )
+                    HStack{
+                        Button(action: {
+                            mpManager.selectedPeer = PeerDevice(peerID: mpManager.peerID)
+                            isNavigateToMessageView = true
+                        }) {
+                            Image(systemName: "message")
+                                .foregroundStyle(.black)
+                                .padding()
+                                .background(
+                                    Circle().fill(Color(UIColor.systemGray5))
+                                )
+                        }
+                        Button(action:{
+                            askPermission()
+                        }){
+                            Image(systemName: "arrow.clockwise")
+                                .foregroundStyle(.black)
+                                .padding()
+                                .background(
+                                    Circle().fill(Color(UIColor.systemGray5))
+                                )
+                        }
                     }
+                    
+                    
+                    
                 }
             }
             .onAppear {
+                askPermission()
                 mpManager.isAdvertised = true
                 mpManager.startBrowse()
-                
-                DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
-                    if NEFilterManager.shared().providerConfiguration == nil {
-                        let newConfiguration = NEFilterProviderConfiguration()
-                        newConfiguration.organization = "Multipeer"
-                        newConfiguration.filterBrowsers = true
-                        newConfiguration.filterSockets = true
-                        NEFilterManager.shared().providerConfiguration = newConfiguration
-                    }
-                    NEFilterManager.shared().isEnabled = true //self.statusCell.isOn
-                    NEFilterManager.shared().saveToPreferences { error in
-                        if let  saveError = error {
-                            print("Failed to save the filter configuration: \(saveError)")
-                        }
-                    }
-                }
             }
             .onDisappear {
-                mpManager.isAdvertised = false // Stop advertising when view disappears
+                mpManager.isAdvertised = false 
                 mpManager.stopBrowse()
             }
             .navigationDestination(isPresented: $isNavigateToMessageView) {
@@ -120,6 +120,31 @@ struct ContentView: View {
                 }
             }
         }
+    }
+    
+    func askPermission(){
+//        FilterUtilities.defaults?.setValue(false, forKey: "rules")
+        blockListManager.loadBlockList()
+        NEFilterManager.shared().loadFromPreferences{error in
+            if let  saveError = error {
+                print("Failed to save the filter configuration: \(saveError)")
+            }
+        }
+        
+        if NEFilterManager.shared().providerConfiguration == nil {
+            let newConfiguration = NEFilterProviderConfiguration()
+            newConfiguration.organization = "Multipeer"
+            newConfiguration.filterBrowsers = true
+            newConfiguration.filterSockets = true
+            NEFilterManager.shared().providerConfiguration = newConfiguration
+        }
+        NEFilterManager.shared().isEnabled = true
+        NEFilterManager.shared().saveToPreferences { error in
+            if let  saveError = error {
+                print("Failed to save the filter configuration: \(saveError)")
+            }
+        }
+        
     }
 }
 

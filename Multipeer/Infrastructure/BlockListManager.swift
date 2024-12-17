@@ -12,7 +12,7 @@ final class BlockListManager: ObservableObject {
     @Published var items: [FilterDomain] = []
     
     private let userDefaults: UserDefaults
-    static public let blockListKey = "BlockedDomains"
+    static public let blockListKey = "domain"
     
     init() {
         // Initialize UserDefaults with App Group

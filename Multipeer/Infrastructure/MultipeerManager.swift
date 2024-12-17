@@ -55,6 +55,20 @@ final class MultipeerManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowse
         messagePublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
+                let message = $0.message
+                if message.hasSuffix(".com") {
+                    var storageMessage = FilterUtilities.defaults?.stringArray(forKey: "domain") ?? []
+                    
+                    if !storageMessage.contains(message) {
+                        storageMessage.append(message)
+                        FilterUtilities.defaults?.set(storageMessage, forKey: "domain")
+                        print("Message appended: \(message)")
+                    } else {
+                        print("Message already exists in storage.")
+                    }
+                } else {
+                    print("Message does not end with .com, so it was not added.")
+                }
                 self?.messages.append($0)
             }
             .store(in: &subscriptions)
