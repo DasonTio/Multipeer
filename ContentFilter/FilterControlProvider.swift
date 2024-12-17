@@ -7,97 +7,45 @@
 
 import NetworkExtension
 import Foundation
+import Multipeer
 
-/// A NEFitlerControlProvider sub-class that implements logic for downloading rules from a web server.
-//class ControlExtension : NEFilterControlProvider {
-//
-//    // MARK: Properties
-//
-//    /// The default rules, in the event that
-//    let defaultRules: [String: [String: AnyObject]] = [
-//        "www.apple.com" : [
-//            "kRule" : FilterRuleAction.Block.rawValue,
-//            "kRemediationKey" : "Remediate1"
-//        ]
-//    ]
-//
-//    /// An integer to use as the context for key-value observing.
-//    var observerContext = 0
-//
-//    // MARK: Interface
-//
-//    /// Update the filter based on changes to the configuration
-//    func updateFromConfiguration() {
-//        guard let serverAddress = filterConfiguration.serverAddress else { return }
-//
-//        FilterUtilities.defaults?.setValue(defaultRules, forKey: "rules")
-//        FilterUtilities.fetchRulesFromServer(filterConfiguration.serverAddress)
-//
-//        let remediationURL = "https://\(serverAddress)/remediate/?url=\(NEFilterProviderRemediationURLFlowURLHostname)&organization=\(NEFilterProviderRemediationURLOrganization)&username=\(NEFilterProviderRemediationURLUsername)"
-//
-//        print("Remediation url is \(remediationURL)")
-//
-//        remediationMap =
-//            [
-//                NEFilterProviderRemediationMapRemediationURLs : [ "Remediate1" : remediationURL ],
-//                NEFilterProviderRemediationMapRemediationButtonTexts :
-//                    [
-//                        "RemediateButton1" : "Request Access",
-//                        "RemediateButton2" : "\"<script>alert('wooo hoooooo');</script>",
-//                        "RemediateButton3" : "Request Access 3",
-//                ]
-//            ]
-//
-//        self.URLAppendStringMap = [ "SafeYes" : "safe=yes", "Adult" : "adult=yes"]
-//
-//        print("Remediation map set")
-//    }
-//
-//    // MARK: Initializers
-//
-//    override init() {
-//        super.init()
-//        updateFromConfiguration()
-//
-//        FilterUtilities.defaults?.setValue(defaultRules, forKey: "rules")
-//        FilterUtilities.fetchRulesFromServer(self.filterConfiguration.serverAddress)
-//
-//        self.addObserver(self, forKeyPath: "filterConfiguration", options: [.Initial, .New], context: &observerContext)
-//    }
-//
-//    // MARK: NSObject
-//
-//    /// Observe changes to the configuration.
-//    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-//        if keyPath == "filterConfiguration" && context == &observerContext {
-//            print("configuration changed")
-//            updateFromConfiguration()
-//        } else {
-//            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
-//        }
-//    }
-//
-//    // MARK: NEFilterControlProvider
-//
-//    /// Handle a new flow of network data
-//    override func handleNewFlow(flow: NEFilterFlow, completionHandler: (NEFilterControlVerdict) -> Void) {
-//        print("Handle new flow called")
-//        var controlVerdict = NEFilterControlVerdict.updateRules()
-//        let (ruleType, hostname, _) = FilterUtilities.getRule(flow)
-//
-//        switch ruleType {
-//            case .NeedMoreRulesAndAllow:
-//                print("\(hostname) is set to be Allowed")
-//                controlVerdict = NEFilterControlVerdict.allowVerdictWithUpdateRules(false)
-//
-//            case .NeedMoreRulesAndBlock:
-//                print("\(hostname) is set to be blocked")
-//                controlVerdict = NEFilterControlVerdict.dropVerdictWithUpdateRules(false)
-//            
-//            default:
-//                print("\(hostname) is not set for need more rules")
-//        }
-//
-//        completionHandler(controlVerdict)
-//    }
-//}
+import NetworkExtension
+
+class FilterControlProvider: NEFilterControlProvider {
+
+    public static let defaults = UserDefaults(suiteName: "group.com.dasontio.Multipeer")
+    
+    override init() {
+        super.init()
+    }
+    
+    private let blockedDomains: [String] = [
+        "youtube.com",
+        "www.youtube.com"
+    ]
+    
+    override func startFilter(completionHandler: @escaping ((any Error)?) -> Void) {
+        FilterControlProvider.defaults?.object(forKey: "")
+        completionHandler(nil)
+    }
+    
+    override func stopFilter(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+        
+    /// Handle a new flow of network data
+    override func handleNewFlow(_ flow: NEFilterFlow, completionHandler: @escaping (NEFilterControlVerdict) -> Void) {
+        if let host = flow.url?.host?.lowercased(){
+            for domain in blockedDomains{
+                if (host.hasSuffix(domain)){
+                    completionHandler(.drop(withUpdateRules: false))
+                    return
+                }
+            }
+        }
+        // Add code to determine if the flow should be dropped or not, downloading new rules if required
+        completionHandler(.allow(withUpdateRules: false))
+    }
+    
+    
+}

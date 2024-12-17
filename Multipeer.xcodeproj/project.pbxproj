@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF0AD2952D11CFF000213246 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCD5EA12D10742F00720149 /* NetworkExtension.framework */; };
+		EF0AD29D2D11CFF000213246 /* ContentFilterData.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EF0AD2942D11CFEF00213246 /* ContentFilterData.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EF0AD2A72D11D00900213246 /* FilterDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0AD2A42D11D00900213246 /* FilterDataProvider.swift */; };
 		EFB24F942D0DBF590003B077 /* MultipeerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24F912D0DBF590003B077 /* MultipeerUITests.swift */; };
 		EFB24F952D0DBF590003B077 /* MultipeerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24F922D0DBF590003B077 /* MultipeerUITestsLaunchTests.swift */; };
 		EFB24F982D0DBF590003B077 /* MultipeerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB24F962D0DBF590003B077 /* MultipeerTests.swift */; };
@@ -25,13 +28,19 @@
 		EFCD5EB42D10743E00720149 /* FilterControlProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD5EB12D10743E00720149 /* FilterControlProvider.swift */; };
 		EFCD5EB72D1074B600720149 /* FilterDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD5EB62D1074B300720149 /* FilterDomain.swift */; };
 		EFCD5EB82D107BDD00720149 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFCD5EA12D10742F00720149 /* NetworkExtension.framework */; };
-		EFCD5EBB2D107EC000720149 /* FilterUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCD5EBA2D107EB900720149 /* FilterUtilities.swift */; };
 		EFD2ADD12D0EFBAA0027A2A4 /* MultipeerManager+MCSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2ADD02D0EFB9C0027A2A4 /* MultipeerManager+MCSession.swift */; };
 		EFD2ADD42D0F06FC0027A2A4 /* MultipeerManager+MCNearbyServiceBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2ADD32D0F06ED0027A2A4 /* MultipeerManager+MCNearbyServiceBrowser.swift */; };
 		EFD2ADD72D0F08890027A2A4 /* PeerDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFD2ADD62D0F08860027A2A4 /* PeerDevice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EF0AD29B2D11CFF000213246 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EFB24F5C2D0DBF520003B077 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF0AD2932D11CFEF00213246;
+			remoteInfo = ContentFilterData;
+		};
 		EFB24F752D0DBF530003B077 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EFB24F5C2D0DBF520003B077 /* Project object */;
@@ -62,6 +71,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				EF0AD29D2D11CFF000213246 /* ContentFilterData.appex in Embed Foundation Extensions */,
 				EFCD5EAA2D10742F00720149 /* ContentFilter.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -70,6 +80,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EF0AD2942D11CFEF00213246 /* ContentFilterData.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ContentFilterData.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF0AD2A32D11D00900213246 /* ContentFilterData.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ContentFilterData.entitlements; sourceTree = "<group>"; };
+		EF0AD2A42D11D00900213246 /* FilterDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDataProvider.swift; sourceTree = "<group>"; };
+		EF0AD2A52D11D00900213246 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFB24F642D0DBF520003B077 /* Multipeer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multipeer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB24F742D0DBF530003B077 /* MultipeerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipeerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFB24F7E2D0DBF530003B077 /* MultipeerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipeerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,13 +108,20 @@
 		EFCD5EB12D10743E00720149 /* FilterControlProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterControlProvider.swift; sourceTree = "<group>"; };
 		EFCD5EB22D10743E00720149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFCD5EB62D1074B300720149 /* FilterDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDomain.swift; sourceTree = "<group>"; };
-		EFCD5EBA2D107EB900720149 /* FilterUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterUtilities.swift; sourceTree = "<group>"; };
 		EFD2ADD02D0EFB9C0027A2A4 /* MultipeerManager+MCSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipeerManager+MCSession.swift"; sourceTree = "<group>"; };
 		EFD2ADD32D0F06ED0027A2A4 /* MultipeerManager+MCNearbyServiceBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MultipeerManager+MCNearbyServiceBrowser.swift"; sourceTree = "<group>"; };
 		EFD2ADD62D0F08860027A2A4 /* PeerDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeerDevice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EF0AD2912D11CFEF00213246 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF0AD2952D11CFF000213246 /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EFB24F612D0DBF520003B077 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,6 +155,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF0AD2A62D11D00900213246 /* ContentFilterData */ = {
+			isa = PBXGroup;
+			children = (
+				EF0AD2A32D11D00900213246 /* ContentFilterData.entitlements */,
+				EF0AD2A42D11D00900213246 /* FilterDataProvider.swift */,
+				EF0AD2A52D11D00900213246 /* Info.plist */,
+			);
+			path = ContentFilterData;
+			sourceTree = "<group>";
+		};
 		EFB24F5B2D0DBF520003B077 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +172,7 @@
 				EFB24F972D0DBF590003B077 /* MultipeerTests */,
 				EFB24F932D0DBF590003B077 /* MultipeerUITests */,
 				EFCD5EB32D10743E00720149 /* ContentFilter */,
+				EF0AD2A62D11D00900213246 /* ContentFilterData */,
 				EFCD5EA02D10742F00720149 /* Frameworks */,
 				EFB24F652D0DBF520003B077 /* Products */,
 			);
@@ -153,6 +185,7 @@
 				EFB24F742D0DBF530003B077 /* MultipeerTests.xctest */,
 				EFB24F7E2D0DBF530003B077 /* MultipeerUITests.xctest */,
 				EFCD5E9F2D10742F00720149 /* ContentFilter.appex */,
+				EF0AD2942D11CFEF00213246 /* ContentFilterData.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,7 +221,6 @@
 				EFCD5E9A2D10699100720149 /* Info.plist */,
 				EFCD5E972D10651900720149 /* Multipeer.entitlements */,
 				EFD2ADD52D0F08780027A2A4 /* Model */,
-				EFCD5EB92D107EB200720149 /* Extension */,
 				EFB24FA32D0DC0230003B077 /* Infrastructure */,
 				EFB24F9A2D0DBF590003B077 /* Preview Content */,
 				EFB24F9B2D0DBF590003B077 /* Assets.xcassets */,
@@ -229,14 +261,6 @@
 			path = ContentFilter;
 			sourceTree = "<group>";
 		};
-		EFCD5EB92D107EB200720149 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				EFCD5EBA2D107EB900720149 /* FilterUtilities.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		EFD2ADD52D0F08780027A2A4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +275,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EF0AD2932D11CFEF00213246 /* ContentFilterData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF0AD2A12D11CFF000213246 /* Build configuration list for PBXNativeTarget "ContentFilterData" */;
+			buildPhases = (
+				EF0AD2902D11CFEF00213246 /* Sources */,
+				EF0AD2912D11CFEF00213246 /* Frameworks */,
+				EF0AD2922D11CFEF00213246 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ContentFilterData;
+			packageProductDependencies = (
+			);
+			productName = ContentFilterData;
+			productReference = EF0AD2942D11CFEF00213246 /* ContentFilterData.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		EFB24F632D0DBF520003B077 /* Multipeer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFB24F882D0DBF530003B077 /* Build configuration list for PBXNativeTarget "Multipeer" */;
@@ -264,6 +307,7 @@
 			);
 			dependencies = (
 				EFCD5EA92D10742F00720149 /* PBXTargetDependency */,
+				EF0AD29C2D11CFF000213246 /* PBXTargetDependency */,
 			);
 			name = Multipeer;
 			packageProductDependencies = (
@@ -341,6 +385,9 @@
 				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
+					EF0AD2932D11CFEF00213246 = {
+						CreatedOnToolsVersion = 16.1;
+					};
 					EFB24F632D0DBF520003B077 = {
 						CreatedOnToolsVersion = 16.1;
 					};
@@ -375,11 +422,19 @@
 				EFB24F732D0DBF530003B077 /* MultipeerTests */,
 				EFB24F7D2D0DBF530003B077 /* MultipeerUITests */,
 				EFCD5E9E2D10742F00720149 /* ContentFilter */,
+				EF0AD2932D11CFEF00213246 /* ContentFilterData */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EF0AD2922D11CFEF00213246 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EFB24F622D0DBF520003B077 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -413,6 +468,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EF0AD2902D11CFEF00213246 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF0AD2A72D11D00900213246 /* FilterDataProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EFB24F602D0DBF520003B077 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,7 +490,6 @@
 				EFB24FA02D0DBF590003B077 /* MultipeerApp.swift in Sources */,
 				EFD2ADD72D0F08890027A2A4 /* PeerDevice.swift in Sources */,
 				EFC679FA2D0F0EFD00481B96 /* PermissionRequest.swift in Sources */,
-				EFCD5EBB2D107EC000720149 /* FilterUtilities.swift in Sources */,
 				EFCD5EB72D1074B600720149 /* FilterDomain.swift in Sources */,
 				EFCD5E992D1065ED00720149 /* BlockListManager.swift in Sources */,
 			);
@@ -461,6 +523,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EF0AD29C2D11CFF000213246 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF0AD2932D11CFEF00213246 /* ContentFilterData */;
+			targetProxy = EF0AD29B2D11CFF000213246 /* PBXContainerItemProxy */;
+		};
 		EFB24F762D0DBF530003B077 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EFB24F632D0DBF520003B077 /* Multipeer */;
@@ -479,6 +546,58 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		EF0AD29E2D11CFF000213246 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ContentFilterData/ContentFilterData.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DP3K3GBL6K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ContentFilterData/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ContentFilterData;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dasontio.Multipeer.ContentFilterData;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF0AD29F2D11CFF000213246 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ContentFilterData/ContentFilterData.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = DP3K3GBL6K;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ContentFilterData/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ContentFilterData;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dasontio.Multipeer.ContentFilterData;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		EFB24F862D0DBF530003B077 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -789,6 +908,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EF0AD2A12D11CFF000213246 /* Build configuration list for PBXNativeTarget "ContentFilterData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF0AD29E2D11CFF000213246 /* Debug */,
+				EF0AD29F2D11CFF000213246 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EFB24F5F2D0DBF520003B077 /* Build configuration list for PBXProject "Multipeer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -13,29 +13,6 @@ struct ContentView: View {
     @State private var isNavigateToMessageView: Bool = false
     @State private var focusedField: UUID?
     
-    lazy var extensionBundle: Bundle = {
-
-        let extensionsDirectoryURL = URL(fileURLWithPath: "Contents/Library/SystemExtensions", relativeTo: Bundle.main.bundleURL)
-        let extensionURLs: [URL]
-        do {
-            extensionURLs = try FileManager.default.contentsOfDirectory(at: extensionsDirectoryURL,
-                                                                        includingPropertiesForKeys: nil,
-                                                                        options: .skipsHiddenFiles)
-        } catch let error {
-            fatalError("Failed to get the contents of \(extensionsDirectoryURL.absoluteString): \(error.localizedDescription)")
-        }
-
-        guard let extensionURL = extensionURLs.first else {
-            fatalError("Failed to find any system extensions")
-        }
-
-        guard let extensionBundle = Bundle(url: extensionURL) else {
-            fatalError("Failed to create a bundle with URL \(extensionURL.absoluteString)")
-        }
-
-        return extensionBundle
-    }()
-    
     var body: some View {
         NavigationStack {
             List {
@@ -114,6 +91,21 @@ struct ContentView: View {
                 mpManager.isAdvertised = true
                 mpManager.startBrowse()
                 
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.5) {
+                    if NEFilterManager.shared().providerConfiguration == nil {
+                        let newConfiguration = NEFilterProviderConfiguration()
+                        newConfiguration.organization = "Multipeer"
+                        newConfiguration.filterBrowsers = true
+                        newConfiguration.filterSockets = true
+                        NEFilterManager.shared().providerConfiguration = newConfiguration
+                    }
+                    NEFilterManager.shared().isEnabled = true //self.statusCell.isOn
+                    NEFilterManager.shared().saveToPreferences { error in
+                        if let  saveError = error {
+                            print("Failed to save the filter configuration: \(saveError)")
+                        }
+                    }
+                }
             }
             .onDisappear {
                 mpManager.isAdvertised = false // Stop advertising when view disappears
