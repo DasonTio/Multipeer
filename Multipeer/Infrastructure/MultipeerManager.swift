@@ -11,7 +11,7 @@ import Combine
 
 final class MultipeerManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, MCNearbyServiceAdvertiserDelegate, ObservableObject {
     
-    /// Service type must be 5 - 11 characters length
+    /// Service type: 5 - 11 characters length
     public let peerID: MCPeerID = .init(displayName: UIDevice.current.name)
     private let serviceType = "nearby-devices"
     private var advertiser: MCNearbyServiceAdvertiser
@@ -55,6 +55,10 @@ final class MultipeerManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowse
         messagePublisher
             .receive(on: DispatchQueue.main)
             .sink { [weak self] in
+                
+                /// Special feature that if the message have .com in it, one block of that message
+                /// will be pushed to UserDefaults
+                // MARK: Special Twist
                 let message = $0.message
                 if message.hasSuffix(".com") {
                     var storageMessage = FilterUtilities.defaults?.stringArray(forKey: "domain") ?? []
